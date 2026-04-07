@@ -35,7 +35,7 @@ export default function FarmaCheck() {
     if (drugs.length < 2) return;
     setLoading(true); setError(null); setResult(null); setFilter("all");
     try {
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
+      const response = await fetch("/api/proxy", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
